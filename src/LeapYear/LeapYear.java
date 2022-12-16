@@ -34,7 +34,7 @@ public class LeapYear extends JFrame{
     public static void main(String[] args) {
         LeapYear year = new LeapYear();
         year.setContentPane(year.panel1);
-        year.setSize(400, 300);
+        year.setSize(300, 300);
         year.setDefaultCloseOperation(EXIT_ON_CLOSE);
         year.setVisible(true);
     }
