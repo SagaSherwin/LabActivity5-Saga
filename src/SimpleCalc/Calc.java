@@ -1,6 +1,11 @@
 package SimpleCalc;
 
+import LeapYear.LeapYear;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class Calc extends JFrame{
     private JPanel panel1;
@@ -11,11 +16,44 @@ public class Calc extends JFrame{
     private JTextField lblResult;
 
     public Calc(){
+        btnCompute.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double num1 = Double.parseDouble(tfNumber1.getText());
+                double num2 = Double.parseDouble(tfNumber2.getText());
+                double result;
 
+                if(cbOperations.getSelectedItem().equals("+")){
+                    result = num1+num2;
+                    String str = String.valueOf(result);
+                    lblResult.setText(str);
+                }
+                else if(cbOperations.getSelectedItem().equals("-")){
+                    result = num1-num2;
+                    String str = String.valueOf(result);
+                    lblResult.setText(str);
+                }
+                else if(cbOperations.getSelectedItem().equals("*")){
+                    result = num1*num2;
+                    String str = String.valueOf(result);
+                    lblResult.setText(str);
+                }
+                else if(cbOperations.getSelectedItem().equals("/")){
+                    result = num1/num2;
+                    String str = String.valueOf(result);
+                    lblResult.setText(str);
+                }
+            }
+
+        });
     }
 
     public static void main(String[] args) {
-
+        Calc cal = new Calc();
+        cal.setContentPane(cal.panel1);
+        cal.setSize(600, 500);
+        cal.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        cal.setVisible(true);
     }
 
 
