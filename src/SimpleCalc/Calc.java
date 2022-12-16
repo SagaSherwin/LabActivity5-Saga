@@ -2,7 +2,7 @@ package SimpleCalc;
 
 import javax.swing.*;
 
-public class Calc {
+public class Calc extends JFrame{
     private JPanel panel1;
     private JTextField tfNumber1;
     private JComboBox cbOperations;
@@ -10,7 +10,9 @@ public class Calc {
     private JTextField tfNumber2;
     private JTextField lblResult;
 
+    public static void main(String[] args) {
 
+    }
 
 
 }
