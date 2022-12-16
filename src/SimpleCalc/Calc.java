@@ -19,32 +19,32 @@ public class Calc extends JFrame{
         btnCompute.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double num1 = Double.parseDouble(tfNumber1.getText());
-                double num2 = Double.parseDouble(tfNumber2.getText());
-                double result;
+                try {
+                    double num1 = Double.parseDouble(tfNumber1.getText());
+                    double num2 = Double.parseDouble(tfNumber2.getText());
+                    double result;
 
-                if(cbOperations.getSelectedItem().equals("+")){
-                    result = num1+num2;
-                    String str = String.valueOf(result);
-                    lblResult.setText(str);
-                }
-                else if(cbOperations.getSelectedItem().equals("-")){
-                    result = num1-num2;
-                    String str = String.valueOf(result);
-                    lblResult.setText(str);
-                }
-                else if(cbOperations.getSelectedItem().equals("*")){
-                    result = num1*num2;
-                    String str = String.valueOf(result);
-                    lblResult.setText(str);
-                }
-                else if(cbOperations.getSelectedItem().equals("/")){
-                    result = num1/num2;
-                    String str = String.valueOf(result);
-                    lblResult.setText(str);
+                    if (cbOperations.getSelectedItem().equals("+")) {
+                        result = num1 + num2;
+                        String str = String.valueOf(result);
+                        lblResult.setText(str);
+                    } else if (cbOperations.getSelectedItem().equals("-")) {
+                        result = num1 - num2;
+                        String str = String.valueOf(result);
+                        lblResult.setText(str);
+                    } else if (cbOperations.getSelectedItem().equals("*")) {
+                        result = num1 * num2;
+                        String str = String.valueOf(result);
+                        lblResult.setText(str);
+                    } else if (cbOperations.getSelectedItem().equals("/")) {
+                        result = num1 / num2;
+                        String str = String.valueOf(result);
+                        lblResult.setText(str);
+                    }
+                } catch (NumberFormatException a) {
+                    JOptionPane.showMessageDialog(null, "Not a Number");
                 }
             }
-
         });
     }
 
