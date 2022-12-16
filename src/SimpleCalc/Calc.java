@@ -10,6 +10,10 @@ public class Calc extends JFrame{
     private JTextField tfNumber2;
     private JTextField lblResult;
 
+    public Calc(){
+
+    }
+
     public static void main(String[] args) {
 
     }
