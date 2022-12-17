@@ -50,6 +50,7 @@ public class Calc extends JFrame{
 
     public static void main(String[] args) {
         Calc cal = new Calc();
+        cal.setTitle("Simple Calculator");
         cal.setContentPane(cal.panel1);
         cal.setSize(600, 500);
         cal.setDefaultCloseOperation(EXIT_ON_CLOSE);
